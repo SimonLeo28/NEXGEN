@@ -29,14 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       <nav className="bg-[#2596BE] p-4">
+       <nav className="bg-white p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <h1 className="text-white text-2xl font-bold">NEXGEN</h1>
+        <h1 className="text-[#2596BE] text-2xl font-bold">Yuvamytr</h1>
         <div className="space-x-4">
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            <a className="text-[#2596BE] hover:bg-[#2596BE] hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/">Home</a>
+            <a className="text-[#2596BE] hover:bg-[#2596BE] hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/courses">Courses</a>
+            <a className="text-[#2596BE] hover:bg-[#2596BE] hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/login">Login</a>
+            <a className="text-[#2596BE] hover:bg-[#2596BE] hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/user">Contact</a>
         </div>
       </div>
     </nav>
