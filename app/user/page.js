@@ -11,6 +11,7 @@ const page = () => {
     try {
       const data = {name , email , message };
     let response = await fetch('/api/contact', {
+      cache: "no-cache",
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
