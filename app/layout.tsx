@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "NEXGEN",
-  description: "Created by Simon, Srujana and Shivram",
+  title: "Yuvamytr",
+  description: "Created by Yuvamytr interns",
 };
 
 export default function RootLayout({

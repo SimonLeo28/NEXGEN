@@ -10,7 +10,7 @@ const page = () => {
   const sendData = async () => {
     try {
       const data = {name , email , message };
-    let response = await fetch('/api/contact', {
+    let response = await fetch('http://localhost:3000/api/contact', {
       cache: "no-cache",
       method: "POST",
       headers: {
@@ -35,7 +35,7 @@ const page = () => {
       sendData();
     }
     // form submission logic
-    console.log({ email, mobile });
+    console.log({ name , email , message });
   };
 
   return (
@@ -45,7 +45,7 @@ const page = () => {
         {/* Left Side: NEXGEN Logo */}
         <div className="flex-1 flex items-center justify-center bg-white p-8">
           <h1 className="text-6xl font-bold text-[#2596BE] text-center" style={{ fontFamily: 'monospace, sans-serif' }}>
-            NEXGEN
+            Yuvamytr
           </h1>
         </div>
 
@@ -55,13 +55,13 @@ const page = () => {
 
           <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
             <div>
-              <label htmlFor="name" className="block text-lg font-medium text-gray-700">Name</label>
+              <label htmlFor="name" className="block text-lg font-medium text-black">Name</label>
               <input
                 id="name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
@@ -73,7 +73,7 @@ const page = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
@@ -85,7 +85,7 @@ const page = () => {
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
