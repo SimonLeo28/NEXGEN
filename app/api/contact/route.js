@@ -11,8 +11,8 @@ export async function POST(req) {
         const data = req.body;
         console.log("Data recieved successfully.");
         
-        const newItem = Contact();
-        const savedItem = await newItem.create(data);
+        const newItem = new Contact(data);
+        const savedItem = await newItem.save();
         console.log("Data sent successfully.");
         
         return NextResponse.json({message: "Item created successfully"}, {status: 200},{savedItem});
