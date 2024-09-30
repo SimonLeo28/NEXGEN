@@ -8,12 +8,17 @@ export async function POST(req) {
         console.log("Connected to database...");
         
 
-        const data = req.body;
+        const data = await req.json();
         console.log("Data recieved successfully.");
+       // console.log(data);
+        
         
         const newItem = new Contact(data);
+       // console.log("Model Used...");
+        
+
         const savedItem = await newItem.save();
-        console.log("Data sent successfully.");
+        console.log("Data sent to database successfully.");
         
         return NextResponse.json({message: "Item created successfully"}, {status: 200},{savedItem});
     }  catch(error) {

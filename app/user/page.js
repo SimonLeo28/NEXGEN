@@ -105,7 +105,7 @@ const page = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Left Section */}
         <div className="text-center md:text-left ml-10">
-          <h3 className="text-lg font-bold">NEXGEN</h3>
+          <h3 className="text-lg font-bold">Yuvamytr</h3>
           <p className="text-sm mt-2">
             Empowering students with the next generation of learning resources and tools.
           </p>
@@ -113,7 +113,7 @@ const page = () => {
 
         {/* Right Section */}
         <div className="mt-4 md:mt-0 mr-10">
-          <p className="text-sm">&copy; {new Date().getFullYear()} NEXGEN. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} Yuvamytr. All rights reserved.</p>
         </div>
       </div>
     </footer>
