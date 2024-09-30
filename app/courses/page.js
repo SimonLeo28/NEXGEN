@@ -63,7 +63,7 @@ const  page = () => {
            width={200}
            height={200}
            />
-      <h1 className="font-extrabold">Introduction to Stratergic</h1> <span className="font-extrabold"> management</span>
+      <h1 className="font-extrabold">Introduction to Web dev</h1> <span className="font-extrabold"> management</span>
       <span className="text-gray-500">Sundar Pichai</span>
       <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
     </div>
