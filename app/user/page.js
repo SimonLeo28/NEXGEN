@@ -40,7 +40,7 @@ const page = () => {
 
   return (
     <>
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="container mx-auto flex flex-col lg:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Left Side: NEXGEN Logo */}
         <div className="flex-1 flex items-center justify-center bg-white p-8">
