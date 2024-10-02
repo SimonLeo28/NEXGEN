@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       <nav className="bg-gray-50 p-4">
+       <nav className="bg-white p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <h1 className="text-[#2596BE] text-2xl font-bold">Yuvamytr</h1>
         <div className="space-x-4">

@@ -1,7 +1,14 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import { Timeline } from "@/components/ui/timeline";
 
+const words = [
+  "Build the Career You Deserve.",
+  "Master the Skills You Need."
+];
+  
 
 const content = [
   {
@@ -71,12 +78,128 @@ const content = [
 ];
 
 export default function Home() {
+
+  const data = [
+    {
+      title: "Comprehensive Learning",
+      content: (
+        <div>
+          <p className="text-black dark:text-black text-xs md:text-2xl font-normal mb-8">
+          Our diverse range of courses covers everything from essential technical skills <br/>
+          to in-demand soft skills. Access a wide range of courses designed to meet <br/>
+          industry demands and enhance your skills.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/1.svg"
+              alt="startup template"
+              width={700}
+              height={700}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Expert-Led Instruction",
+      content: (
+        <div>
+          <p className="text-black dark:text-black text-xs md:text-2xl font-normal mb-8">
+          Learn from industry leaders and seasoned professionals who bring real-world  <br/>
+          experience and insights into every lesson. Our instructors are committed to  <br/>
+          providing practical knowledge that you can apply directly to your career.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/2.svg"
+              alt="startup template"
+              width={700}
+              height={700}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Flexible Learning Experience",
+      content: (
+        <div>
+          <p className="text-black dark:text-black text-xs md:text-2xl font-normal mb-8">
+          Enjoy the freedom to learn at your own pace with our flexible course formats.   <br/>
+          Access high-quality video lectures, interactive quizzes, and hands-on projects   <br/>
+          whenever and wherever you prefer.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/3.svg"
+              alt="startup template"
+              width={700}
+              height={700}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Real-Time Industry Insights",
+      content: (
+        <div>
+          <p className="text-black dark:text-black text-xs md:text-2xl font-normal mb-8">
+          Stay ahead of the curve with courses that reflect the latest trends and    <br/>
+          technologies. Our content is regularly updated to ensure you’re learning the    <br/>
+          most current and relevant skills.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/3.svg"
+              alt="startup template"
+              width={700}
+              height={700}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Affordable and Accessible",
+      content: (
+        <div>
+          <p className="text-black dark:text-black text-xs md:text-2xl font-normal mb-8">
+          Get access to high-quality education without breaking the bank. Our courses    <br/>
+          are priced competitively, and we offer various discounts and promotions to    <br/>
+          make learning more accessible
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/3.svg"
+              alt="startup template"
+              width={700}
+              height={700}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
-    <div className="bg-gray-50">
-   <div className="flex flex-col justify-center items-center h-[400px] bg-gray-50">
-    <h1 className="text-7xl text-[#2596BE] font-bold">Welcome to Yuvamytr</h1>
-    <p className="text-black font-bold">Empowering students with the next generation of learning resources and tools.</p>
+    <div className="bg-white">
+   <div className="p-5 flex flex-col justify-center items-center h-[100%] bg-white">
+    <TextGenerateEffect words={words} />
+    <Image 
+          src="https://bootcamp-lms-omega.vercel.app/assets/HeroSection.svg"
+          alt="card thumbnail"
+          width={1000}
+          height={700}
+           />
     </div>
 
 
@@ -130,8 +253,8 @@ export default function Home() {
    <div className="p-0 flex justify-center items-center">
     <h1 className="text-5xl font-extrabold text-black">Why Choose Us? </h1>
    </div>
-   <div className="flex flex-col gap-[10%] justify-center items-center h-[1000px] ml-20 mr-20">
-    <div className="grid grid-cols-2  grid-rows-1">
+   {/*<div className="flex flex-col gap-[10%] justify-center items-center h-[1000px] ml-20 mr-20"> */}
+    {/* <div className="grid grid-cols-2  grid-rows-1">
       <h1 className="flex justify-start items-start text-4xl font-extrabold text-gray-600">Comprehensive Learning</h1>
       <p className="text-black font-medium ml-[50px]">Our diverse range of courses covers everything from essential technical skills <br/>
       to in-demand soft skills. Access a wide range of courses designed to meet <br/>
@@ -165,8 +288,11 @@ export default function Home() {
       are priced competitively, and we offer various discounts and promotions to   <br/>
       make learning more accessible.
       </p>
-    </div> 
+    </div>  */}
+    <div className="w-full">
+      <Timeline data={data} />
     </div>
+   {/* </div> */}
   
    <footer className="bg-black text-[#2596BE] py-6 mt-10">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
