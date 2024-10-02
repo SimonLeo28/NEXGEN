@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 
+
 const content = [
   {
     title: "Comprehensive Learning",
@@ -96,7 +97,7 @@ export default function Home() {
        <h1 className="font-extrabold">Introduction to Python</h1> 
        <span className="font-extrabold">Programming</span>
        <span className="text-gray-500">Angela Yu</span>
-       <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
+       <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
     </div>
 
     <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
@@ -109,7 +110,7 @@ export default function Home() {
   <h1 className="font-extrabold">Introduction to Python</h1> 
   <span className="font-extrabold">Programming</span>
   <span className="text-gray-500">Angela Yu</span>
-  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
+  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
 </div>
 
 <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
@@ -122,7 +123,7 @@ export default function Home() {
   <h1 className="font-extrabold">Introduction to Python</h1> 
   <span className="font-extrabold">Programming</span>
   <span className="text-gray-500">Angela Yu</span>
-  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
+  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
 </div>
 
    </div>

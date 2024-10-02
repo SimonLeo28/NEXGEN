@@ -41,7 +41,7 @@ const page = () => {
   return (
     <>
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="container mx-auto flex flex-col lg:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="container mx-auto flex w-[80%] rounded-3xl flex-col lg:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Left Side: NEXGEN Logo */}
         <div className="flex-1 flex items-center justify-center bg-white p-8">
           <h1 className="text-6xl font-bold text-[#2596BE] text-center" style={{ fontFamily: 'monospace, sans-serif' }}>

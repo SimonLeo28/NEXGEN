@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from 'react';
 
@@ -10,7 +11,7 @@ const page = () => {
           <input
             className='flex justify-items-center text-black text-center w-[50%] h-[50px] rounded-l-md border-4 border-[#2596BE] focus:outline-none'
             type='text'
-            placeholder='Have Something On Mind...'
+            placeholder='Search for anything'
           />
           <button className="bg-[#2596BE] text-white font-semibold h-[50px] w-[10%] rounded-r-md hover:bg-[#1f7a9b] transition duration-300">Search</button>
         </div>
@@ -34,7 +35,7 @@ const page = () => {
               <h1 className="font-extrabold">{course.name}</h1> 
               <span className="font-extrabold">Programming</span>
               <span className="text-gray-500">{course.mentor}</span>
-              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300">Learn More</button>
+              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300"><a href="/singlecourse">Learn More</a></button>
             </div>
           ))}
         </div>
@@ -57,7 +58,7 @@ const page = () => {
               <h1 className="font-extrabold">{course.name}</h1>
               <span className="font-extrabold">Management</span>
               <span className="text-gray-500">{course.mentor}</span>
-              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300">Learn More</button>
+              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300"><a href="/singlecourse">Learn More</a></button>
             </div>
           ))}
         </div>
@@ -80,7 +81,7 @@ const page = () => {
               <h1 className="font-extrabold">{course.name}</h1>
               <span className="font-extrabold">Design</span>
               <span className="text-gray-500">{course.mentor}</span>
-              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300">Learn More</button>
+              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300"><a href="/singlecourse">Learn More</a></button>
             </div>
           ))}
         </div>
