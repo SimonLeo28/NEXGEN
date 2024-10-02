@@ -1,87 +1,138 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 
 export default function Page() {
+  // State for dropdown toggle
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Toggle function for dropdown
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <div className='flex flex-col gap-5'>
-        {/* Course Header */}
-        <section className='bg-black p-10'>
-          <h1 className='text-[#2596BE] text-4xl font-bold mt-10 ml-10'>
-            100 Days of Code: The Complete Python Pro Bootcamp.
-          </h1>
-          <p className='text-gray-400 ml-10'>
-            Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games, and apps!
-          </p>
-        </section>
+      <div className="flex flex-col gap-5">
 
-        {/* What You'll Learn */}
-        <section className='w-fit p-5 ml-10 mt-10 border-2 border-gray-300'>
-          <h2 className='text-2xl font-bold text-black'>What you'll learn</h2>
-          <div className='grid grid-cols-2 gap-5'>
-            <ul className='text-black list-disc list-inside'>
-              <li className='mt-3'>
-                Master Python programming by building 100 unique projects over 100 days.
-              </li>
-              <li>Learn to program professionally in Python.</li>
-              <li>Create a portfolio of 100 Python projects for developer job applications.</li>
-            </ul>
-            <ul className='text-black list-disc list-inside'>
-              <li className='mt-3'>
-                Build real-world apps and games with Python.
-              </li>
-              <li>Understand automation, web development, and data science.</li>
-              <li>Learn to apply Python in professional environments.</li>
-            </ul>
+        {/* Header Section with Buy Now */}
+        <section className="bg-black p-10 flex justify-between items-center shadow-lg rounded-lg mx-5">
+          <div>
+            <h1 className="text-[#2596BE] text-4xl font-bold">
+              100 Days of Code: The Complete Python Pro Bootcamp
+            </h1>
+            <p className="text-gray-400 mt-2">
+              Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games, and apps!
+            </p>
+
+            {/* Course Meta Info */}
+            <div className="flex items-center text-gray-400 mt-4">
+              <span className="mr-5">4.5 ⭐ (5000 Ratings)</span>
+              <span className="mr-5">30,000 students enrolled</span>
+              <span>Last updated: Sep 2023</span>
+            </div>
           </div>
-        </section>
 
-        {/* Course Content */}
-        <section className='w-[50%] mt-10 ml-10'>
-          <h2 className='text-black text-2xl font-bold p-3'>Course Content</h2>
-          <p className='text-black ml-10'>Course videos...</p>
-        </section>
-
-        {/* Requirements */}
-        <section className='ml-10 mt-10 w-[70%]'>
-          <h2 className='text-black text-2xl font-bold p-3'>Requirements</h2>
-          <ul className='text-black list-disc list-inside p-5'>
-            <li>No programming experience needed – I'll teach you everything you need to know.</li>
-            <li>A Mac or PC computer with access to the internet.</li>
-            <li>No paid software required – I'll show you how to use PyCharm, Jupyter Notebooks, and Google Colab.</li>
-            <li>Step-by-step guidance to install and set up all software.</li>
-          </ul>
-        </section>
-
-        {/* Description */}
-        <section className='ml-10 mt-10 w-[80%]'>
-          <h2 className='text-black text-2xl font-bold p-3'>Description</h2>
-          <p className='text-black'>
-            Here will be the course description sliced accordingly, with a "Read More" option to display the full text.
-          </p>
-        </section>
-
-        {/* Who is this course for */}
-        <section className='p-5'>
-          <h2 className='text-2xl text-black font-bold p-3 ml-3'>Who is this course for?</h2>
-          <ul className='list-disc text-black list-inside ml-10'>
-            <li>If you want to learn to code through fun and useful projects, this course is for you.</li>
-            <li>If you want to start your own startup by building your own websites and web apps.</li>
-            <li>If you are a complete beginner, this course will make you a Python professional.</li>
-            <li>If you're a seasoned programmer switching to Python, this is the quickest way to learn through coding projects.</li>
-            <li>If you're an intermediate Python programmer, the 100 days of code challenge will help you level up.</li>
-          </ul>
-        </section>
-
-        {/* Price Details and Buy Now */}
-        <section className="bg-white p-6 w-[60%] mx-auto mt-10 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-black mb-4">Price Details</h2>
-          <div className="flex justify-between items-center">
-            <p className="text-lg font-semibold text-black">$99.99</p>
-            <button className="bg-[#2596BE] text-white py-2 px-4 rounded hover:bg-[#1c768a] transition duration-300">
+          {/* Buy Now Button */}
+          <div className="flex flex-col justify-center items-end">
+            <p className="text-3xl font-bold text-white">$99.99</p>
+            <button className="bg-[#2596BE] text-white py-2 px-6 rounded-lg hover:bg-[#1c768a] mt-4 transition duration-300">
               Buy Now
             </button>
           </div>
         </section>
+
+        {/* Main Content Layout */}
+        <div className="flex flex-row gap-10 p-10">
+          {/* Left Side - Course Content */}
+          <div className="w-2/3">
+
+            {/* What You'll Learn */}
+            <section className="mb-10 p-5 border border-gray-300 shadow-lg rounded-lg">
+              <h2 className="text-2xl font-bold text-black">What you'll learn</h2>
+              <div className="grid grid-cols-2 gap-5 mt-5">
+                <ul className="text-black list-disc list-inside">
+                  <li>Master Python programming by building 100 unique projects over 100 days.</li>
+                  <li>Learn to program professionally in Python.</li>
+                  <li>Create a portfolio of 100 Python projects for developer job applications.</li>
+                </ul>
+                <ul className="text-black list-disc list-inside">
+                  <li>Build real-world apps and games with Python.</li>
+                  <li>Understand automation, web development, and data science.</li>
+                  <li>Learn to apply Python in professional environments.</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* Course Content */}
+            <section className="mb-10 p-5 border border-gray-300 shadow-lg rounded-lg">
+              <h2 className="text-2xl font-bold text-black">Course Content</h2>
+              <p className="text-gray-600 mt-3">25 sections • 120 lectures • 60 hours total length</p>
+
+              {/* Dropdown for course content */}
+              <div className="mt-5">
+                <button
+                  onClick={toggleDropdown}
+                  className="text-[#2596BE] font-bold text-lg focus:outline-none"
+                >
+                  {isOpen ? 'Hide Content' : 'Show Content'}
+                </button>
+                {isOpen && (
+                  <div className="mt-5">
+                    <ul className="list-disc text-black list-inside">
+                      <li>Introduction to Python (10 lectures)</li>
+                      <li>Advanced Python Concepts (8 lectures)</li>
+                      <li>Web Development with Flask (15 lectures)</li>
+                      <li>Automation and Scripting (12 lectures)</li>
+                      <li>Data Science with Pandas (18 lectures)</li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </section>
+
+            {/* Requirements */}
+            <section className="mb-10 p-5 border border-gray-300 shadow-lg rounded-lg">
+              <h2 className="text-2xl font-bold text-black">Requirements</h2>
+              <ul className="text-black list-disc list-inside mt-5">
+                <li>No programming experience needed – I'll teach you everything you need to know.</li>
+                <li>A Mac or PC computer with access to the internet.</li>
+                <li>Step-by-step guidance to install and set up all software.</li>
+              </ul>
+            </section>
+
+            {/* Who is this course for */}
+            <section className="mb-10 p-5 border border-gray-300 shadow-lg rounded-lg">
+              <h2 className="text-2xl font-bold text-black">Who is this course for?</h2>
+              <ul className="list-disc text-black list-inside mt-5">
+                <li>If you want to learn to code through fun and useful projects, this course is for you.</li>
+                <li>If you are a complete beginner, this course will make you a Python professional.</li>
+                <li>If you're an intermediate Python programmer, the 100 days of code challenge will help you level up.</li>
+              </ul>
+            </section>
+          </div>
+
+          {/* Right Side - Sidebar with Price & CTA */}
+          <div className="w-1/3 p-5 h-fit bg-gray-100 rounded-lg shadow-lg">
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-black">This Course Includes:</h3>
+              <ul className="list-inside mt-5 text-black">
+                <li>✔️ 60 hours on-demand video</li>
+                <li>✔️ 120 downloadable resources</li>
+                <li>✔️ Full lifetime access</li>
+                <li>✔️ Access on mobile and TV</li>
+                <li>✔️ Certificate of completion</li>
+              </ul>
+            </div>
+
+            {/* Enroll Now Section */}
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <p className="text-3xl font-bold text-black">$99.99</p>
+              <button className="bg-[#2596BE] text-white py-2 px-6 rounded-lg hover:bg-[#1c768a] mt-4 transition duration-300">
+                Enroll Now
+              </button>
+            </div>
+          </div>
+        </div>
 
         {/* Footer */}
         <footer className="bg-black text-[#2596BE] py-6 mt-10">
