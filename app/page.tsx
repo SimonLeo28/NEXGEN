@@ -1,4 +1,73 @@
+"use client";
 import Image from "next/image";
+import React from "react";
+
+const content = [
+  {
+    title: "Comprehensive Learning",
+    description:
+      "Our diverse range of courses covers everything from essential technical skills to in-demand soft skills. Access a wide range of courses designed to meet industry demands and enhance your skills.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/1.svg"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Expert-Led Instruction",
+    description:
+      "Learn from industry leaders and seasoned professionals who bring real-world experience and insights into every lesson. Our instructors are committed to providing practical knowledge that you can apply directly to your career.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/2.svg"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Flexible Learning Experience",
+    description:
+      "Enjoy the freedom to learn at your own pace with our flexible course formats. Access high-quality video lectures, interactive quizzes, and hands-on projects whenever and wherever you prefer.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/3.svg"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Real-Time Industry Insights",
+    description:
+      "Stay ahead of the curve with courses that reflect the latest trends and technologies. Our content is regularly updated to ensure you’re learning the most current and relevant skills.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="https://bootcamp-lms-omega.vercel.app/assets/landingPage/4.svg"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+];
 
 export default function Home() {
   return (
@@ -7,56 +76,55 @@ export default function Home() {
    <div className="flex flex-col justify-center items-center h-[400px] bg-gray-50">
     <h1 className="text-7xl text-[#2596BE] font-bold">Welcome to Yuvamytr</h1>
     <p className="text-black font-bold">Empowering students with the next generation of learning resources and tools.</p>
-    {/* <Image src="https://bootcamp-lms-omega.vercel.app/assets/HeroSection.svg"
-           alt="Hero-senction image"
-           width={50}
-           height={50}
-           /> */}
     </div>
+
+
+
    <div className="flex flex-col justify-center items-center">
    <h1 className="p-7 text-5xl font-extrabold text-black">Courses of the week</h1>
    </div>
    <div className="flex justify-center items-center gap-9 bg-gray- h-[400px] ml-[50px] mr-[50px] rounded-[10px]">
-    {/* <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:border-4 hover:border-[#2596BE] hover:text-black hover:font-bold">
-    <Image src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
-           alt="card thumbnail"
-           width={200}
-           height={200}
+
+    {/* The below section 3 div's are of course card */}
+    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+         <Image 
+          src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
+          alt="card thumbnail"
+          width={200}
+          height={200}
            />
-      <h1 className="font-extrabold">Introduction to Python</h1> <span className="font-extrabold"> Programming</span>
-      <span className="text-gray-500">Angela Yu</span>
-      <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
-    </div> */}
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white  hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold">
-    <Image src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
-           alt="card thumbnail"
-           width={200}
-           height={200}
-           />
-      <h1 className="font-extrabold">Introduction to Python</h1> <span className="font-extrabold"> Programming</span>
-      <span className="text-gray-500">Angela Yu</span>
-      <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
+       <h1 className="font-extrabold">Introduction to Python</h1> 
+       <span className="font-extrabold">Programming</span>
+       <span className="text-gray-500">Angela Yu</span>
+       <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
     </div>
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:bg-white  hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold">
-    <Image src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
-           alt="card thumbnail"
-           width={200}
-           height={200}
-           />
-      <h1 className="font-extrabold">Introduction to Python</h1> <span className="font-extrabold"> Programming</span>
-      <span className="text-gray-500">Angela Yu</span>
-      <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
-    </div>
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:bg-white  hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold">
-    <Image src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
-           alt="card thumbnail"
-           width={200}
-           height={200}
-           />
-      <h1 className="font-extrabold">Introduction to Python</h1> <span className="font-extrabold"> Programming</span>
-      <span className="text-gray-500">Angela Yu</span>
-      <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
-    </div>
+
+    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+  <Image 
+    src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
+    alt="card thumbnail"
+    width={200}
+    height={200}
+  />
+  <h1 className="font-extrabold">Introduction to Python</h1> 
+  <span className="font-extrabold">Programming</span>
+  <span className="text-gray-500">Angela Yu</span>
+  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
+</div>
+
+<div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+  <Image 
+    src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
+    alt="card thumbnail"
+    width={200}
+    height={200}
+  />
+  <h1 className="font-extrabold">Introduction to Python</h1> 
+  <span className="font-extrabold">Programming</span>
+  <span className="text-gray-500">Angela Yu</span>
+  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2">Learn More</button>
+</div>
+
    </div>
    <div className="p-0 flex justify-center items-center">
     <h1 className="text-5xl font-extrabold text-black">Why Choose Us? </h1>
