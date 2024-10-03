@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 
+
 const page = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const page = () => {
     })
     console.log(response);
     } catch(error) {
-      console.log("Error logging in.");
+      console.log("Error sending message.");
       
     }
     

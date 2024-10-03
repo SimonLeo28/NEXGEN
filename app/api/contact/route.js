@@ -4,6 +4,8 @@ import Contact from "../../models/Contact"
 
 export async function POST(req) {
     try {
+        console.log("Reached...");
+        
         await connectDB();
         console.log("Connected to database...");
         
