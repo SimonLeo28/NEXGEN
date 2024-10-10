@@ -4,6 +4,7 @@ import React from "react";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { Timeline } from "@/components/ui/timeline";
 
+
 const words = [
   "Build the Career You Deserve.",
   "Master the Skills You Need."

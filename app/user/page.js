@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 
 const page = () => {
@@ -45,9 +46,12 @@ const page = () => {
       <div className="container mx-auto flex w-[80%] rounded-3xl flex-col lg:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Left Side: NEXGEN Logo */}
         <div className="flex-1 flex items-center justify-center bg-white p-8">
-          <h1 className="text-6xl font-bold text-[#2596BE] text-center" style={{ fontFamily: 'monospace, sans-serif' }}>
-            Yuvamytr
-          </h1>
+        <Image 
+          src="https://bootcamp-lms-omega.vercel.app/logo.svg"
+          alt="card thumbnail"
+          width={400}
+          height={400}
+           />
         </div>
 
         {/* Right Side: Contact Form */}
