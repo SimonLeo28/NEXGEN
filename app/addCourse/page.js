@@ -108,7 +108,7 @@ export default function page() {
                   </label>
                   <input
                     id="price"
-                    type="text"
+                    type="number"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
@@ -172,7 +172,6 @@ export default function page() {
                   />
                 </div>
 
-                Submit Button
                 <div className="col-span-2 flex justify-end">
                   <button
                     type="submit"

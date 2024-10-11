@@ -12,11 +12,11 @@ export async function POST(req) {
 
         const data = await req.json();
         console.log("Data recieved successfully.");
-       // console.log(data);
+       console.log(data);
         
         
         const newItem = new Course(data);
-       // console.log("Model Used...");
+       console.log("Model Used...");
         
 
         const savedItem = await newItem.save();
