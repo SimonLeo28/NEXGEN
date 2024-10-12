@@ -54,7 +54,7 @@ export default function page() {
     <>
       <div className="flex flex-col gap-5">
         {/* Header Section */}
-        <section className="flex flex-col justify-items-center bg-black p-10 flex justify-between items-center shadow-lg rounded-lg mx-5">
+        <section className="flex flex-col justify-items-center bg-black p-10 justify-between items-center shadow-lg rounded-lg mx-5">
           <div className='flex flex-col justify-center items-center'>
             <h1 className="text-[#2596BE] text-4xl font-bold">
               Enter your course details
