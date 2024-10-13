@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import { useEffect, useState } from "react";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { Timeline } from "@/components/ui/timeline";
+import Link from "next/link";
 
 
 const words = [
@@ -79,6 +80,34 @@ const content = [
 ];
 
 export default function Home() {
+
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        "https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json"
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error fetching data: ${response.status}`);
+      }
+
+      const result = await response.json();
+      setCourses(result); // Assuming the array itself is the JSON response
+      setLoading(false);
+
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const data = [
     {
@@ -192,26 +221,34 @@ export default function Home() {
 
   return (
     <>
-    <div className="bg-white">
-   <div className="p-5 flex flex-col justify-center items-center h-[100%] bg-white">
-    <TextGenerateEffect words={words} />
+    <div className="bg-white h-screen">
+   <center>
+   <div className="p-0 flex gap-[30%] justify-center items-center h-screen bg-white">
+    <div className="flex flex-col">
+    <h1 className="font-bold text-black text-4xl">The Best <span className="text-[#2596BE]">Platform</span> For <br/> Enhancing Skills</h1>
+    <div className="flex gap-5 p-7">
+      <Link href={'/login'} className="flex items-center justify-center bg-[#2596BE] w-[40%] p-3 h-[40%] rounded-md text-white"><button>Get Started</button></Link>
+      <Link href={'/courses'} className="text-[#2596BE] p-3 hover:bg-[#2596BE] hover:text-white hover:rounded-md"><button >Browse Courses</button></Link>
+    </div>
+    </div>
     <Image 
-          src="https://bootcamp-lms-omega.vercel.app/assets/HeroSection.svg"
+          src="https://media.licdn.com/dms/image/v2/C560BAQGTtBjH60U0RQ/company-logo_200_200/company-logo_200_200/0/1662561262393/yuvamytr_logo?e=2147483647&v=beta&t=rCxNwUSN0RpVQV7SsNaqKdd8lEWX9ciwEv8pmYOjt3w"
           alt="card thumbnail"
-          width={1000}
-          height={700}
+          width={400}
+          height={400}
            />
     </div>
+    </center>
 
 
 
-   <div className="flex flex-col justify-center items-center">
-   <h1 className="p-7 text-5xl font-extrabold text-black">Courses of the week</h1>
+    <div className="flex flex-col justify-center items-center">
+       <h1 className="p-0 text-5xl font-extrabold text-black">Courses of the week</h1>
    </div>
-   <div className="flex justify-center items-center gap-9 bg-gray- h-[400px] ml-[50px] mr-[50px] rounded-[10px]">
+   <div className="flex justify-center items-center gap-9 bg-gray- h-screen ml-[50px] mr-[50px] rounded-[10px]">
 
     {/* The below section 3 div's are of course card */}
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
          <Image 
           src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
           alt="card thumbnail"
@@ -224,7 +261,7 @@ export default function Home() {
        <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
     </div>
 
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
   <Image 
     src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
     alt="card thumbnail"
@@ -237,7 +274,7 @@ export default function Home() {
   <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
 </div>
 
-<div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[80%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+<div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
   <Image 
     src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
     alt="card thumbnail"
@@ -258,11 +295,16 @@ export default function Home() {
       <Timeline data={data} />
     </div>
   
-   <footer className="bg-black text-[#2596BE] py-6 mt-10">
+   <footer className="bg-black text-white py-6 mt-10">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Left Section */}
         <div className="text-center md:text-left ml-10">
-          <h3 className="text-lg font-bold">Yuvamytr</h3>
+        <Image 
+           src="https://bootcamp-lms-omega.vercel.app/image.svg"
+           alt="card thumbnail"
+           width={200}
+           height={200}
+        />
           <p className="text-sm mt-2">
             Empowering students with the next generation of learning resources and tools.
           </p>

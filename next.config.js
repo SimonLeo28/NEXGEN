@@ -1,6 +1,6 @@
 module.exports = {
     images: {
-      domains: ['bootcamp-lms-omega.vercel.app'],
+      domains: ['bootcamp-lms-omega.vercel.app' , 'media.licdn.com'],
     },
   }
   
