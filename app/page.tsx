@@ -248,7 +248,7 @@ export default function Home() {
    <div className="flex justify-center items-center gap-9 bg-gray- h-screen ml-[50px] mr-[50px] rounded-[10px]">
 
     {/* The below section 3 div's are of course card */}
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[52%] hover:text-black hover:font-bold transition-all duration-300">
          <Image 
           src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
           alt="card thumbnail"
@@ -261,7 +261,7 @@ export default function Home() {
        <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
     </div>
 
-    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+    <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[52%] hover:text-black hover:font-bold transition-all duration-300">
   <Image 
     src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
     alt="card thumbnail"
@@ -274,7 +274,7 @@ export default function Home() {
   <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
 </div>
 
-<div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[82%] hover:text-black hover:font-bold transition-all duration-300">
+<div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[52%] hover:text-black hover:font-bold transition-all duration-300">
   <Image 
     src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
     alt="card thumbnail"
