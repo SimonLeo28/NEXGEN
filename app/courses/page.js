@@ -1,48 +1,45 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Page = () => {
-
-  const [data, setData] = useState(null);
+  // State for fetched data
+  const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-    async function fetchData() {
-      try {
-        const response = await fetch('http://localhost:3000/courseData.json');
-        const result = await response.json();
-        console.log(result);
-        
-      } catch(error) {
-        console.log(error);
-        
+  // Fetch data from the JSON file
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        "https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json"
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error fetching data: ${response.status}`);
       }
+
+      const result = await response.json();
+      setCourses(result); // Assuming the array itself is the JSON response
+      setLoading(false);
+
+    } catch (error) {
+      console.log(error);
+      setError("Failed to fetch data");
+      setLoading(false);
     }
+  }
 
-  fetchData();
-
-
-
-
-
-  const courses = [
-    { name: "Python for Beginners", mentor: "Angela Yu" },
-    { name: "JavaScript Essentials", mentor: "Colt Steele" },
-    { name: "Data Structures & Algorithms", mentor: "Robert C. Martin" },
-    { name: "Leadership in Business", mentor: "Sundar Pichai" },
-    { name: "Marketing Strategies", mentor: "Philip Kotler" },
-    { name: "Financial Management", mentor: "Warren Buffett" },
-    { name: "Introduction to UI/UX", mentor: "Damini M Naidu" },
-    { name: "Advanced UX Design", mentor: "Don Norman" },
-    { name: "Design Thinking Fundamentals", mentor: "David Kelley" }
-  ];
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const [search, setSearch] = useState("");
 
   // Filter courses based on search input
   const filteredCourses = courses.filter((course) =>
-    course.name.toLowerCase().includes(search.toLowerCase())
+    course.title.toLowerCase().includes(search.toLowerCase())
   );
 
   const handleSearch = (e) => {
@@ -66,24 +63,35 @@ const Page = () => {
           </button>
         </div>
 
+        {/* Loading/Error State */}
+        {loading && <p>Loading courses...</p>}
+        {error && <p>{error}</p>}
+
         {/* Courses Cards */}
         <div className="flex flex-wrap justify-center items-center gap-9 bg-gray-50 mx-[50px] py-5 rounded-[10px]">
-          {filteredCourses.map((course, index) => (
+          {!loading && !error && filteredCourses.map((course, index) => (
             <div
               key={index}
               className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[300px] w-[20%] font-semibold transition-all duration-300 hover:bg-white hover:shadow-lg hover:w-[22%] hover:h-[310px] hover:text-black hover:font-bold"
             >
+              {/* Thumbnail */}
               <Image
                 src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
                 alt="course thumbnail"
                 width={200}
                 height={200}
               />
-              <h1 className="font-extrabold">{course.name}</h1>
-              <span className="text-gray-500">{course.mentor}</span>
+              
+              {/* Course Title */}
+              <center>
+              <h1 className="font-extrabold">{course.title}</h1>
+              </center>
+              
+              {/* Learn More Button */}
+              <Link href={`/singlecourse/${course._id}`}>
               <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300">
-                <a href="/singlecourse">Learn More</a>
-              </button>
+                Learn More
+              </button> </Link>
             </div>
           ))}
         </div>
@@ -95,8 +103,7 @@ const Page = () => {
             <div className="text-center md:text-left ml-10">
               <h3 className="text-lg font-bold">Yuvamytr</h3>
               <p className="text-sm mt-2">
-                Empowering students with the next generation of learning
-                resources and tools.
+                Empowering students with the next generation of learning resources and tools.
               </p>
             </div>
 
