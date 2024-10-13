@@ -1,8 +1,31 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Page = () => {
+
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+    async function fetchData() {
+      try {
+        const response = await fetch('http://localhost:3000/courseData.json');
+        const result = await response.json();
+        console.log(result);
+        
+      } catch(error) {
+        console.log(error);
+        
+      }
+    }
+
+  fetchData();
+
+
+
+
+
   const courses = [
     { name: "Python for Beginners", mentor: "Angela Yu" },
     { name: "JavaScript Essentials", mentor: "Colt Steele" },

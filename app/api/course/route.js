@@ -28,3 +28,10 @@ export async function POST(req) {
         
     }
 }
+
+export async function GET(req) {
+    await connectDB();
+    console.log("Connected to the database...");
+    
+    
+}
