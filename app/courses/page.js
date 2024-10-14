@@ -21,7 +21,7 @@ const Page = () => {
       }
 
       const result = await response.json();
-      setCourses(result); // Assuming the array itself is the JSON response
+      setCourses(result); 
       setLoading(false);
 
     } catch (error) {

@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
 
@@ -96,7 +95,7 @@ export default function Home() {
       }
 
       const result = await response.json();
-      setCourses(result); // Assuming the array itself is the JSON response
+      setCourses(result); 
       setLoading(false);
 
     } catch (error) {
