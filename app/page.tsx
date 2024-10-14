@@ -3,7 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
-
+import { CoursesWeek } from "./CoursesWeek"
+import { Cover } from "@/components/ui/cover";
 
 const words = [
   "Build the Career You Deserve.",
@@ -225,7 +226,7 @@ export default function Home() {
    <center>
    <div className="p-0 flex gap-[30%] justify-center items-center h-screen bg-white">
     <div className="flex flex-col">
-    <h1 className="font-bold text-black text-4xl">The Best <span className="text-[#2596BE]">Platform</span> For <br/> Enhancing Skills</h1>
+    <h1 className="font-bold text-black text-4xl">The Best <Cover><span className="text-[#2596BE]">Platform</span></Cover> For <br/> Enhancing Skills</h1>
     <div className="flex gap-5 p-7">
       <Link href={'/login'} className="flex items-center justify-center bg-[#2596BE] w-[40%] p-3 h-[40%] rounded-md text-white"><button>Get Started</button></Link>
       <Link href={'/courses'} className="text-[#2596BE] p-3 hover:bg-[#2596BE] hover:text-white hover:rounded-md"><button >Browse Courses</button></Link>
@@ -242,12 +243,12 @@ export default function Home() {
 
 
 
-    <div className="flex flex-col justify-center items-center">
+    {/* <div className="flex flex-col justify-center items-center">
        <h1 className="p-0 text-5xl font-extrabold text-black">Courses of the week</h1>
    </div>
    <div className="flex justify-center items-center gap-9 bg-gray- h-screen ml-[50px] mr-[50px] rounded-[10px]">
 
-    {/* The below section 3 div's are of course card */}
+    {/* The below section 3 div's are of course card 
     <div className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[50%] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[52%] hover:text-black hover:font-bold transition-all duration-300">
          <Image 
           src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
@@ -285,10 +286,15 @@ export default function Home() {
   <span className="font-extrabold">Programming</span>
   <span className="text-gray-500">Angela Yu</span>
   <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2"><a href="/singlecourse">Learn More</a></button>
-</div>
+</div> */}
+
+  <div className="h-auto">
+
+   <CoursesWeek/>
+  </div>
 
    </div>
-   <div className="p-0 flex justify-center items-center">
+   <div className="p-0 flex justify-center mt-[50%] items-center">
     <h1 className="text-5xl font-extrabold text-black">Why Choose Us? </h1>
    </div>
     <div className="w-full">
@@ -316,7 +322,7 @@ export default function Home() {
         </div>
       </div>
     </footer>
-    </div>
    </>
   );
 }
+

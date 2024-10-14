@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { CoursesWeek } from "../CoursesWeek"
 
 const Page = () => {
   // State for fetched data
@@ -63,12 +64,22 @@ const Page = () => {
           </button>
         </div>
 
+        <div>
+          <CoursesWeek/>
+        </div>
+
         {/* Loading/Error State */}
         {loading && <p>Loading courses...</p>}
         {error && <p>{error}</p>}
 
         {/* Courses Cards */}
-        <div className="flex flex-wrap justify-center items-center gap-9 bg-gray-50 mx-[50px] py-5 rounded-[10px]">
+        <div className="flex flex-col gap-[10%]">
+
+        <div className=" ml-9 flex flex-col justify-center items-center">
+        <h1 className="p-0 text-5xl font-extrabold text-black">Browse our courses...</h1>
+      </div>
+
+        <div className="flex flex-wrap justify-center items-center mt-0 gap-9 bg-gray-50 mx-[50px] py-5 rounded-[10px]">
           {!loading && !error && filteredCourses.map((course, index) => (
             <div
               key={index}
@@ -94,6 +105,7 @@ const Page = () => {
               </button> </Link>
             </div>
           ))}
+        </div>
         </div>
 
         {/* Footer */}
