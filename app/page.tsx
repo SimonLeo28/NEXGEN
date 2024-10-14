@@ -232,7 +232,7 @@ export default function Home() {
     </div>
     </div>
     <Image 
-          src="https://media.licdn.com/dms/image/v2/C560BAQGTtBjH60U0RQ/company-logo_200_200/company-logo_200_200/0/1662561262393/yuvamytr_logo?e=2147483647&v=beta&t=rCxNwUSN0RpVQV7SsNaqKdd8lEWX9ciwEv8pmYOjt3w"
+          src="https://raw.githubusercontent.com/SimonLeo28/NEXGEN/master/ym%20logo.jpg"
           alt="card thumbnail"
           width={400}
           height={400}
