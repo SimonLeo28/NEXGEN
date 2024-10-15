@@ -37,8 +37,8 @@ export default function RootLayout({
       <Image 
           src="https://bootcamp-lms-omega.vercel.app/logo.svg"
           alt="card thumbnail"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
            />
         <div className="space-x-4">
             <a className="text-[#2596BE] hover:bg-[#2596BE] hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/">Home</a>

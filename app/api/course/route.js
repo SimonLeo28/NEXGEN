@@ -1,37 +1,29 @@
-import { NextResponse } from "next/server";
-import connectDB from "../lib/connectDB"
-import Course from "../../models/Course";
+import { NextResponse } from 'next/server';
+import connectDB from '../../../lib/connectDB';
+import Course from "../../models/Course"
 
-export async function POST(req) {
+// Handle GET request to fetch courses
+export async function GET(req) {
     try {
-        console.log("Reached...");
-        
+        // Connect to the database
         await connectDB();
-        console.log("Connected to database...");
-        
+        console.log("Connected to the database...");
 
-        const data = await req.json();
-        console.log("Data recieved successfully.");
-       console.log(data);
-        
-        
-        const newItem = new Course(data);
-       console.log("Model Used...");
-        
+        // Fetch all courses
+        const courses = await Course.find({});
 
-        const savedItem = await newItem.save();
-        console.log("Data sent to database successfully.");
-        
-        return NextResponse.json({message: "Item created successfully"}, {status: 200},{savedItem});
-    }  catch(error) {
-        return NextResponse.json({ message: "Error inserting data"}, {status:200},{error});
-        
+        // Return the courses in JSON format
+        return new Response(JSON.stringify({ success: true, data: courses }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error("Error fetching courses:", error);
+        return new Response(JSON.stringify({ success: false, message: "Failed to fetch courses" }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        });
     }
 }
 
-export async function GET(req) {
-    await connectDB();
-    console.log("Connected to the database...");
-    
-    
-}
+

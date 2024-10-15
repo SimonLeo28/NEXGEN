@@ -32,7 +32,7 @@ const CoursesWeek = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center bg-black text-white font-bold">The data is loading...</div>;
   }
 
   if (error) {

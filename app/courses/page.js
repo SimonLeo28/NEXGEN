@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { CoursesWeek } from "../CoursesWeek"
 
 const Page = () => {
   // State for fetched data
@@ -13,18 +12,17 @@ const Page = () => {
   // Fetch data from the JSON file
   async function fetchData() {
     try {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json"
-      );
+      const response = await fetch("https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json");
 
       if (!response.ok) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
 
       const result = await response.json();
-      setCourses(result); 
-      setLoading(false);
 
+      // If result contains data in a 'data' field, update setCourses accordingly
+      setCourses(result.data || []); 
+      setLoading(false);
     } catch (error) {
       console.log(error);
       setError("Failed to fetch data");
@@ -39,9 +37,11 @@ const Page = () => {
   const [search, setSearch] = useState("");
 
   // Filter courses based on search input
-  const filteredCourses = courses.filter((course) =>
-    course.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredCourses = Array.isArray(courses)
+    ? courses.filter((course) =>
+        course.title.toLowerCase().includes(search.toLowerCase())
+      )
+    : [];
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -64,48 +64,44 @@ const Page = () => {
           </button>
         </div>
 
-        <div>
-          <CoursesWeek/>
-        </div>
-
         {/* Loading/Error State */}
         {loading && <p>Loading courses...</p>}
         {error && <p>{error}</p>}
 
         {/* Courses Cards */}
         <div className="flex flex-col gap-[10%]">
+          <div className="ml-9 flex flex-col justify-center items-center">
+            <h1 className="p-0 text-5xl font-extrabold text-black">Browse our courses...</h1>
+          </div>
 
-        <div className=" ml-9 flex flex-col justify-center items-center">
-        <h1 className="p-0 text-5xl font-extrabold text-black">Browse our courses...</h1>
-      </div>
+          <div className="flex flex-wrap justify-center items-center mt-0 gap-9 bg-gray-50 mx-[50px] py-5 rounded-[10px]">
+            {!loading && !error && filteredCourses.map((course, index) => (
+              <div
+                key={index}
+                className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[300px] w-[20%] font-semibold transition-all duration-300 hover:bg-white hover:shadow-lg hover:w-[22%] hover:h-[310px] hover:text-black hover:font-bold"
+              >
+                {/* Thumbnail */}
+                <Image
+                  src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
+                  alt="course thumbnail"
+                  width={200}
+                  height={200}
+                />
 
-        <div className="flex flex-wrap justify-center items-center mt-0 gap-9 bg-gray-50 mx-[50px] py-5 rounded-[10px]">
-          {!loading && !error && filteredCourses.map((course, index) => (
-            <div
-              key={index}
-              className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[300px] w-[20%] font-semibold transition-all duration-300 hover:bg-white hover:shadow-lg hover:w-[22%] hover:h-[310px] hover:text-black hover:font-bold"
-            >
-              {/* Thumbnail */}
-              <Image
-                src="https://bootcamp-lms-omega.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FInteractiveContent.e7d32ffd.jpg&w=3840&q=75"
-                alt="course thumbnail"
-                width={200}
-                height={200}
-              />
-              
-              {/* Course Title */}
-              <center>
-              <h1 className="font-extrabold">{course.title}</h1>
-              </center>
-              
-              {/* Learn More Button */}
-              <Link href={`/singlecourse/${course._id}`}>
-              <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300">
-                Learn More
-              </button> </Link>
-            </div>
-          ))}
-        </div>
+                {/* Course Title */}
+                <center>
+                  <h1 className="font-extrabold">{course.title}</h1>
+                </center>
+
+                {/* Learn More Button */}
+                <Link href={`/singlecourse/${course._id}`}>
+                  <button className="bg-white border-2 border-[#2596BE] text-[#2596BE] hover:bg-[#2596BE] hover:text-white rounded-md p-2 transition duration-300">
+                    Learn More
+                  </button>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Footer */}

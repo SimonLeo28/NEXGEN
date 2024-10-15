@@ -226,7 +226,7 @@ export default function Home() {
    <center>
    <div className="p-0 flex gap-[30%] justify-center items-center h-screen bg-white">
     <div className="flex flex-col">
-    <h1 className="font-bold text-black text-4xl">The Best <Cover><span className="text-[#2596BE]">Platform</span></Cover> For <br/> Enhancing Skills</h1>
+    <h1 className="font-bold text-black text-4xl">The Best <span className="text-[#2596BE]">Platform</span> For <br/> Enhancing Skills</h1>
     <div className="flex gap-5 p-7">
       <Link href={'/login'} className="flex items-center justify-center bg-[#2596BE] w-[40%] p-3 h-[40%] rounded-md text-white"><button>Get Started</button></Link>
       <Link href={'/courses'} className="text-[#2596BE] p-3 hover:bg-[#2596BE] hover:text-white hover:rounded-md"><button >Browse Courses</button></Link>

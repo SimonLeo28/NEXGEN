@@ -1,33 +1,22 @@
 import mongoose from "mongoose";
 
-const DATABASE_URL = process.env.DATABASE_URL;
+let isConnected = false;  
 
-if (!DATABASE_URL) {
-  throw new Error("Please define the DATABASE_URL environment variable inside .env.local");
-}
-
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
+const DB = process.env.DATABASE_URL;
 
 async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
+  if (isConnected) {
+    console.log("Already connected to Database...");
+    return;
   }
-
-  if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.promise = mongoose.connect(DATABASE_URL, opts).then((mongoose) => {
-      return mongoose;
-    });
+  
+  try {
+    await mongoose.connect(DB);
+    isConnected = true;
+    console.log("Connected to Database successfully...");
+  } catch (error) {
+    console.error("Database connection error:", error);
   }
-  cached.conn = await cached.promise;
-  return cached.conn;
 }
 
 export default connectDB;
