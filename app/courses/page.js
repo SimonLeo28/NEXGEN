@@ -12,8 +12,8 @@ const Page = () => {
   // Fetch data from the JSON file
   async function fetchData() {
     try {
-      const response = await fetch("https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json");
-
+      //const response = await fetch("https://raw.githubusercontent.com/SimonLeo28/NEXGEN/master/courseData.json");
+      const response = await fetch("http://localhost:3000/api/course")
       if (!response.ok) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
@@ -21,7 +21,7 @@ const Page = () => {
       const result = await response.json();
 
       // If result contains data in a 'data' field, update setCourses accordingly
-      setCourses(result.data || []); 
+      setCourses(result.data || result); // Adjust this based on the structure of the fetched data
       setLoading(false);
     } catch (error) {
       console.log(error);

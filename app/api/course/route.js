@@ -11,6 +11,8 @@ export async function GET(req) {
 
         // Fetch all courses
         const courses = await Course.find({});
+        console.log("Data Fetched...");
+        
 
         // Return the courses in JSON format
         return new Response(JSON.stringify({ success: true, data: courses }), {

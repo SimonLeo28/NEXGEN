@@ -1,36 +1,37 @@
 import { NextResponse } from 'next/server';
-import connectDB from "../../lib/connectDB"
-import Course from "../../../models/Course"
+import connectDB from '../../lib/connectDB';
+import Course from '../../../models/Course'
+import { useParams } from 'next/navigation';
 
-// Fetch course by ID (GET)
-export async function GET(req, { params }) {
-    const { id } = params;
-
+export async function GET() {
     try {
-        // Connect to the database
+        const courseId = useParams();
         await connectDB();
+        console.log("Connected to database...");
 
-        // Fetch the course by its ID
-        const course = await Course.findById(id);
+        console.log(courseId);
+        
 
-        // Check if the course exists
-        if (!course) {
-            return new Response(JSON.stringify({ success: false, message: "Course not found" }), {
-                status: 404,
-                headers: { 'Content-Type': 'application/json' },
-            });
-        }
+        //fetching the single course data
+        const courseData = await Course.findOne({_id: new ObjectId(courseId)});
+        console.log("Data Fetched...");
+        
 
-        // Return the course as JSON
-        return new Response(JSON.stringify({ success: true, data: course }), {
+        console.log(courseData);
+        
+
+        //return data in JSON format
+        return new Response(JSON.stringify({ success: true, data: courseData}) , {
             status: 200,
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type' : 'application/json' },
         });
-    } catch (error) {
-        console.error("Error fetching course:", error);
-        return new Response(JSON.stringify({ success: false, message: "Failed to fetch course" }), {
+        
+    } catch(error) {
+        console.log("Error Fetching The Course ",error);
+        return new Response(JSON.stringify({ success: false, message: "Failed to fetch courses" }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
         });
     }
 }
+

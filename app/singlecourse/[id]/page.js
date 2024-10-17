@@ -11,10 +11,13 @@ export default function Page({ params }) {
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
-        const response = await fetch("https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json"); 
+       // const response = await fetch("https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json");
+       const response = await fetch("http://localhost:3000/api/course") 
         const data = await response.json();
-        const foundCourse = data.find(course => course._id === parseInt(id)); 
-        setCourse(foundCourse);
+        //const foundCourse = data.find(course => course._id === parseInt(id)); 
+        console.log(data);
+        
+        setCourse(data);
       } catch (error) {
         console.error('Error fetching course data:', error);
       } finally {

@@ -10,7 +10,7 @@ const CoursesWeek = () => {
   async function fetchData() {
     try {
       const response = await fetch(
-        "https://raw.githubusercontent.com/SimonLeo28/NEXGEN/refs/heads/master/courseData.json"
+        "http://localhost:3000/api/course"
       );
 
       if (!response.ok) {
@@ -18,7 +18,7 @@ const CoursesWeek = () => {
       }
 
       const result = await response.json();
-      setCourses(result.slice(0, 3));  // Take only the first 3 courses
+      setCourses(result.data || result); 
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -46,7 +46,7 @@ const CoursesWeek = () => {
       </div>
       <center>
       <div className="flex justify-center items-center gap-9 bg-gray-  ml-[50px] mr-[50px] rounded-[10px]">
-        {courses.map((course, index) => (
+        {courses.slice(0,3).map((course, index) => (
           <div
             key={index}
             className="rounded-xl border-2 border-gray-300 gap-3 flex flex-col justify-center items-center text-black h-[340px] w-[20%] font-semibold ml-6 hover:bg-white hover:shadow-lg hover:shadow-gray-400 hover:w-[22%] hover:h-[360px] hover:text-black hover:font-bold transition-all duration-300"
@@ -72,3 +72,4 @@ const CoursesWeek = () => {
 };
 
 export { CoursesWeek };
+
